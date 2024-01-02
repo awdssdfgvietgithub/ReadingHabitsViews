@@ -1,6 +1,6 @@
-package com.vietnguyen.booksreporibbon
+package com.vietnguyen.books_repo_ribbon
 
-import com.vietnguyen.booksreporibbon.data.models.BookModel
+import com.vietnguyen.data.models.BookModel
 
 enum class FetchingStatus() {
     LOADING,

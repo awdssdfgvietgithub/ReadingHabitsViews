@@ -13,16 +13,7 @@
         android:theme="@style/Theme.FashionGallery"
         tools:targetApi="31">
         <activity
-            android:name="com.vietnguyen.booksreporibbon.BooksRepoRibbonActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".CardViewActivity"
+            android:name="com.vietnguyen.books_repo_ribbon.BooksRepoRibbonActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

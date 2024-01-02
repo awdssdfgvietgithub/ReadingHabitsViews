@@ -1,27 +1,34 @@
-package com.vietnguyen.booksreporibbon.data.viewmodels
+package com.vietnguyen.books_repo_ribbon
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.vietnguyen.booksreporibbon.BooksRepoUIState
-import com.vietnguyen.booksreporibbon.FetchingStatus
-import com.vietnguyen.booksreporibbon.data.models.BookModel
-import com.vietnguyen.booksreporibbon.data.models.Category.IMAGE_BOOK
-import com.vietnguyen.booksreporibbon.data.models.Category.WORD_BOOK
+import com.vietnguyen.data.models.BookModel
+import com.vietnguyen.data.models.Category.IMAGE_BOOK
+import com.vietnguyen.data.models.Category.WORD_BOOK
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class ListBookViewModel : ViewModel() {
-    private var _allBooksData = MutableLiveData<BooksRepoUIState>()
-    val allBooksData: MutableLiveData<BooksRepoUIState> get() = _allBooksData
+// TODO: activityViewModels(): khoi tao viewmodel voi param
+class ListBookViewModel(/**private val page: Int**/) : ViewModel() {
 
-    private var _wordBooksData = MutableLiveData<BooksRepoUIState>()
-    val wordBooksData: MutableLiveData<BooksRepoUIState> get() = _wordBooksData
+    private var _allBooksData = MutableLiveData(
+        BooksRepoUIState()
+    )
+    val allBooksData: LiveData<BooksRepoUIState> get() = _allBooksData
 
-    private var _imageBooksData = MutableLiveData<BooksRepoUIState>()
-    val imageBooksData: MutableLiveData<BooksRepoUIState> get() = _imageBooksData
+    private var _wordBooksData = MutableLiveData(
+        BooksRepoUIState()
+    )
+    val wordBooksData: LiveData<BooksRepoUIState> get() = _wordBooksData
+
+    private var _imageBooksData = MutableLiveData(
+        BooksRepoUIState()
+    )
+    val imageBooksData: LiveData<BooksRepoUIState> get() = _imageBooksData
 
 
     fun fetchAllBooks() = viewModelScope.launch {

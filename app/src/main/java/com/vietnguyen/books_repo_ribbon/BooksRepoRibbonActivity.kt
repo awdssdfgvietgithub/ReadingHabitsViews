@@ -1,29 +1,45 @@
-package com.vietnguyen.booksreporibbon
+package com.vietnguyen.books_repo_ribbon
 
+import android.os.Build
 import android.os.Bundle
+import android.view.WindowInsets
 import androidx.activity.enableEdgeToEdge
-import androidx.activity.viewModels
+import androidx.core.view.updatePadding
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.widget.ViewPager2
 import com.annguyenhoang.fashiongallery.R
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
-import com.vietnguyen.booksreporibbon.data.adapters.PagesAdapter
-import com.vietnguyen.booksreporibbon.data.models.CategoryModel
-import com.vietnguyen.booksreporibbon.data.viewmodels.ListBookViewModel
+import com.vietnguyen.books_repo_ribbon.adapters.PagesAdapter
+import com.vietnguyen.data.models.CategoryModel
 
 class BooksRepoRibbonActivity : FragmentActivity() {
     private val tabsList = CategoryModel.mock()
-
     private lateinit var tabLayout: TabLayout
     private lateinit var viewPager: ViewPager2
-    private val viewModel: ListBookViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         enableEdgeToEdge()
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_books_ribbon)
         addControls()
+
+        tabLayout.setOnApplyWindowInsetsListener { view, insets ->
+            view.updatePadding(
+                top = when {
+                    Build.VERSION.SDK_INT >= Build.VERSION_CODES.R -> {
+                        view.rootWindowInsets.getInsetsIgnoringVisibility(WindowInsets.Type.systemBars()).top
+                    }
+
+                    Build.VERSION.SDK_INT >= Build.VERSION_CODES.N_MR1 -> {
+                        view.rootWindowInsets?.stableInsetTop ?: 0
+                    }
+
+                    else -> 0
+                }
+            )
+            insets
+        }
 
         val pagerAdapter = PagesAdapter(this)
         viewPager.adapter = pagerAdapter
