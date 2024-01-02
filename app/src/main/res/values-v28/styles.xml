@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="MobileBodyMediumM" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">12.8sp</item>
+        <item name="android:lineHeight">20sp</item>
+        <item name="android:textFontWeight">500</item>
+    </style>
+
+    <style name="MobileLabelMediumM" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">10.24sp</item>
+        <item name="lineHeight">16sp</item>
+        <item name="android:textFontWeight">500</item>
+    </style>
+
+    <style name="MobileTitleMediumM" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">16sp</item>
+        <item name="lineHeight">24sp</item>
+        <item name="android:textFontWeight">500</item>
+    </style>
+
+    <style name="MobileLabelLarge" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">12.8sp</item>
+        <item name="lineHeight">16sp</item>
+        <item name="android:textFontWeight">400</item>
+    </style>
+
+    <style name="MobileLabelMedium" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">10.24sp</item>
+        <item name="lineHeight">16sp</item>
+        <item name="android:textFontWeight">400</item>
+    </style>
+</resources>

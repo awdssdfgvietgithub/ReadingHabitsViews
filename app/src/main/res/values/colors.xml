@@ -26,4 +26,11 @@
     <color name="teal_300">#4DB6AC</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="primary_009F9A">#FF009F9A</color>
+    <color name="neutral_374151">#FF374151</color>
+    <color name="neutral_4B5563">#FF4B5563</color>
+    <color name="neutral_D1D5DB">#FFD1D5DB</color>
+    <color name="neutral_6B7280">#FF6B7280</color>
+    <color name="neutral_11161D">#FF11161D</color>
 </resources>
