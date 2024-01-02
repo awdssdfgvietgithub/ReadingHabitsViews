@@ -1,13 +1,26 @@
 package com.vietnguyen.homeribbon.views.fragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView.LayoutManager
 import com.annguyenhoang.fashiongallery.R
+import com.vietnguyen.homeribbon.data.adapters.BookAdapter
+import com.vietnguyen.homeribbon.data.models.BookModel
+import com.vietnguyen.homeribbon.data.viewmodels.ListBookViewModel
 
 class ViewAllBooksInRepoFragment : Fragment() {
+    private lateinit var bookAdapter: BookAdapter
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var booksData: List<BookModel>
+    private val viewModel: ListBookViewModel by activityViewModels()
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -17,5 +30,27 @@ class ViewAllBooksInRepoFragment : Fragment() {
         savedInstanceState: Bundle?,
     ): View? {
         return inflater.inflate(R.layout.fragment_view_all_books_in_repo, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        addControls(view = view)
+
+        booksData = viewModel.allBooksData.value ?: listOf()
+        val linearLayoutManager = LinearLayoutManager(view.context)
+        displayRecyclerView(booksData = booksData, layout = linearLayoutManager)
+    }
+
+    private fun displayRecyclerView(booksData: List<BookModel>, layout: LayoutManager) {
+        bookAdapter = BookAdapter(booksData)
+
+        recyclerView.apply {
+            layoutManager = layout
+            adapter = bookAdapter
+        }
+    }
+
+    private fun addControls(view: View) {
+        recyclerView = view.findViewById(R.id.all_books_recycler_view)
     }
 }

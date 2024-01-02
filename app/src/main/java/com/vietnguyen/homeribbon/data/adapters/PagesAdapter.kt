@@ -9,8 +9,8 @@ import com.vietnguyen.homeribbon.views.fragments.ViewWordBooksInRepoFragment
 
 private val listFragments = listOf(
     ViewAllBooksInRepoFragment(),
+    ViewWordBooksInRepoFragment(),
     ViewImageBooksInRepoFragment(),
-    ViewWordBooksInRepoFragment()
 )
 
 class PagesAdapter(fragmentActivity: FragmentActivity) : FragmentStateAdapter(fragmentActivity) {
