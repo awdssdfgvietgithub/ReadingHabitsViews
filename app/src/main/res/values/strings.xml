@@ -23,4 +23,11 @@
     <string name="second_rv">Vertical RecyclerView</string>
     <string name="page_position">Page %1$d</string>
     <string name="item_position">Item %1$d</string>
+    <string name="word_book">Sách hình</string>
+    <string name="book_name">Shin-Cậu bé bút chì - Tập 7</string>
+    <string name="author_name">Yoshito Usui</string>
+    <string name="eyeIcon">eye_icon</string>
+    <string name="views">12.345</string>
+    <string name="readNow">Đọc ngay</string>
+    <string name="imageBook">image_book</string>
 </resources>

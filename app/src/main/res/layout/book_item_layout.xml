@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="12dp"
@@ -11,6 +10,7 @@
     <ImageView
         android:layout_width="80dp"
         android:layout_height="128dp"
+        android:contentDescription="@string/imageBook"
         android:scaleType="centerCrop"
         android:src="@drawable/temp_book" />
 
@@ -36,7 +36,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Sách hình"
+                android:text="@string/word_book"
                 android:textAppearance="@style/MobileLabelMediumM"
                 android:textColor="@color/white" />
         </LinearLayout>
@@ -48,7 +48,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Shin-Cậu bé bút chì - Tập 7"
+            android:text="@string/book_name"
             android:textAppearance="@style/MobileTitleMediumM"
             android:textColor="@color/neutral_11161D" />
 
@@ -59,7 +59,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Yoshito Usui"
+            android:text="@string/author_name"
             android:textAppearance="@style/MobileLabelLarge"
             android:textColor="@color/neutral_6B7280" />
 
@@ -75,6 +75,7 @@
             <ImageView
                 android:layout_width="16dp"
                 android:layout_height="16dp"
+                android:contentDescription="@string/eyeIcon"
                 android:src="@drawable/eye"
                 app:tint="@color/neutral_4B5563" />
 
@@ -85,7 +86,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="12.345"
+                android:text="@string/views"
                 android:textAppearance="@style/MobileLabelMedium"
                 android:textColor="@color/neutral_374151" />
 
@@ -103,12 +104,13 @@
             android:layout_gravity="end"
             android:background="@drawable/button_background"
             android:clickable="true"
+            android:focusable="true"
             android:gravity="center">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Đọc ngay"
+                android:text="@string/readNow"
                 android:textAppearance="@style/MobileBodyMediumM"
                 android:textColor="@color/neutral_4B5563" />
         </LinearLayout>
