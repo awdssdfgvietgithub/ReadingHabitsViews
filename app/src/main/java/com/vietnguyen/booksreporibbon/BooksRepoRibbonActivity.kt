@@ -1,4 +1,4 @@
-package com.vietnguyen.homeribbon
+package com.vietnguyen.booksreporibbon
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -8,11 +8,11 @@ import androidx.viewpager2.widget.ViewPager2
 import com.annguyenhoang.fashiongallery.R
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
-import com.vietnguyen.homeribbon.data.adapters.PagesAdapter
-import com.vietnguyen.homeribbon.data.models.CategoryModel
-import com.vietnguyen.homeribbon.data.viewmodels.ListBookViewModel
+import com.vietnguyen.booksreporibbon.data.adapters.PagesAdapter
+import com.vietnguyen.booksreporibbon.data.models.CategoryModel
+import com.vietnguyen.booksreporibbon.data.viewmodels.ListBookViewModel
 
-class BooksRibbonActivity : FragmentActivity() {
+class BooksRepoRibbonActivity : FragmentActivity() {
     private val tabsList = CategoryModel.mock()
 
     private lateinit var tabLayout: TabLayout
@@ -24,7 +24,6 @@ class BooksRibbonActivity : FragmentActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_books_ribbon)
         addControls()
-        viewModel.fetchBooks()
 
         val pagerAdapter = PagesAdapter(this)
         viewPager.adapter = pagerAdapter

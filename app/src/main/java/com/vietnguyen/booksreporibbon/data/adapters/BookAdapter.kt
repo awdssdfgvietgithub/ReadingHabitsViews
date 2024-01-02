@@ -1,4 +1,4 @@
-package com.vietnguyen.homeribbon.data.adapters
+package com.vietnguyen.booksreporibbon.data.adapters
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,7 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.annguyenhoang.fashiongallery.R
-import com.vietnguyen.homeribbon.data.models.BookModel
+import com.vietnguyen.booksreporibbon.data.models.BookModel
 
 class BookAdapter(private var data: List<BookModel>) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {

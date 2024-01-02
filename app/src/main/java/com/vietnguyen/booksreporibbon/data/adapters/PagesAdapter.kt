@@ -1,11 +1,11 @@
-package com.vietnguyen.homeribbon.data.adapters
+package com.vietnguyen.booksreporibbon.data.adapters
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.vietnguyen.homeribbon.views.fragments.ViewAllBooksInRepoFragment
-import com.vietnguyen.homeribbon.views.fragments.ViewImageBooksInRepoFragment
-import com.vietnguyen.homeribbon.views.fragments.ViewWordBooksInRepoFragment
+import com.vietnguyen.booksreporibbon.views.fragments.ViewAllBooksInRepoFragment
+import com.vietnguyen.booksreporibbon.views.fragments.ViewImageBooksInRepoFragment
+import com.vietnguyen.booksreporibbon.views.fragments.ViewWordBooksInRepoFragment
 
 private val listFragments = listOf(
     ViewAllBooksInRepoFragment(),

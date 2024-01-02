@@ -1,4 +1,4 @@
-package com.vietnguyen.homeribbon.views.fragments
+package com.vietnguyen.booksreporibbon.views.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,9 +10,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.LayoutManager
 import com.annguyenhoang.fashiongallery.R
-import com.vietnguyen.homeribbon.data.adapters.BookAdapter
-import com.vietnguyen.homeribbon.data.models.BookModel
-import com.vietnguyen.homeribbon.data.viewmodels.ListBookViewModel
+import com.vietnguyen.booksreporibbon.FetchingStatus
+import com.vietnguyen.booksreporibbon.data.adapters.BookAdapter
+import com.vietnguyen.booksreporibbon.data.models.BookModel
+import com.vietnguyen.booksreporibbon.data.viewmodels.ListBookViewModel
 
 class ViewAllBooksInRepoFragment : Fragment() {
     private lateinit var bookAdapter: BookAdapter
@@ -23,6 +24,7 @@ class ViewAllBooksInRepoFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        viewModel.fetchAllBooks()
     }
 
     override fun onCreateView(
@@ -35,10 +37,21 @@ class ViewAllBooksInRepoFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         addControls(view = view)
+        when (viewModel.allBooksData.value?.fetchingStatus) {
+            FetchingStatus.LOADING -> {
 
-        booksData = viewModel.allBooksData.value ?: listOf()
-        val linearLayoutManager = LinearLayoutManager(view.context)
-        displayRecyclerView(booksData = booksData, layout = linearLayoutManager)
+            }
+
+            FetchingStatus.SUCCESS -> {
+                booksData = viewModel.allBooksData.value?.data ?: listOf()
+                val linearLayoutManager = LinearLayoutManager(view.context)
+                displayRecyclerView(booksData = booksData, layout = linearLayoutManager)
+            }
+
+            else -> {
+
+            }
+        }
     }
 
     private fun displayRecyclerView(booksData: List<BookModel>, layout: LayoutManager) {

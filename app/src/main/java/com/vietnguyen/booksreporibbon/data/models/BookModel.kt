@@ -1,7 +1,7 @@
-package com.vietnguyen.homeribbon.data.models
+package com.vietnguyen.booksreporibbon.data.models
 
 import com.annguyenhoang.fashiongallery.R
-import com.vietnguyen.homeribbon.data.models.Category.*
+import com.vietnguyen.booksreporibbon.data.models.Category.*
 
 data class BookModel(
     val image: Int? = R.drawable.temp_book,

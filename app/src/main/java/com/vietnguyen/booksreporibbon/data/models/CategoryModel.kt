@@ -1,6 +1,6 @@
-package com.vietnguyen.homeribbon.data.models
+package com.vietnguyen.booksreporibbon.data.models
 
-import com.vietnguyen.homeribbon.data.models.Category.*
+import com.vietnguyen.booksreporibbon.data.models.Category.*
 
 enum class Category(
     val id: Int,
