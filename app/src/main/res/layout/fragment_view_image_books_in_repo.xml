@@ -1,16 +1,19 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/white">
+    android:layout_height="match_parent">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/image_books_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_above="@id/progress_bar_load_more"
         android:clipToPadding="false"
         android:paddingHorizontal="16dp"
-        android:paddingVertical="12dp"
-        tools:listitem="@layout/book_item_layout" />
+        android:paddingVertical="12dp" />
 
-</FrameLayout>
+    <include layout="@layout/view_empty_stage" />
+
+    <include layout="@layout/progress_bar_load_data" />
+
+    <include layout="@layout/progress_bar_load_more" />
+</RelativeLayout>

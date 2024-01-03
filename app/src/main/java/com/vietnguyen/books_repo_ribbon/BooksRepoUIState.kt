@@ -12,4 +12,5 @@ enum class FetchingStatus() {
 data class BooksRepoUIState(
     val fetchingStatus: FetchingStatus = FetchingStatus.LOADING,
     val data: List<BookModel> = listOf(),
+    val isLoadingMore: Boolean = false,
 )

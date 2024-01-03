@@ -12,9 +12,8 @@ data class BookModel(
 ) {
     companion object {
         fun mock() = buildList {
-            repeat(10) {
-                add(BookModel(category = WORD_BOOK))
-                add(BookModel(category = IMAGE_BOOK))
+            repeat(10) { index ->
+                add(BookModel(name = "Sách $index", category = WORD_BOOK))
             }
         }
     }

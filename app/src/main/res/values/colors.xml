@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="grey_100"> #F5F5F5</color>
-    <color name="grey_300"> #E0E0E0</color>
+    <color name="grey_100">#F5F5F5</color>
+    <color name="grey_300">#E0E0E0</color>
     <color name="red_100">#F4C7C3</color>
     <color name="red_300">#E67C73</color>
     <color name="red_500">#DB4437</color>
@@ -33,4 +33,5 @@
     <color name="neutral_D1D5DB">#FFD1D5DB</color>
     <color name="neutral_6B7280">#FF6B7280</color>
     <color name="neutral_11161D">#FF11161D</color>
+    <color name="neutral_F3F4F6">#FFF3F4F6</color>
 </resources>
