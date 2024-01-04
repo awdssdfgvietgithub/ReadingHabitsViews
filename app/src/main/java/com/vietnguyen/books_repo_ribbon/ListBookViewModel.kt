@@ -56,7 +56,7 @@ class ListBookViewModel(
             }.await()
         }
 
-        delay(3000)
+        delay(2000)
 
         withContext(Dispatchers.Main.immediate) {
             _allBooksData.value?.let { value ->
@@ -84,7 +84,7 @@ class ListBookViewModel(
             }.await()
         }
 
-        delay(3000)
+        delay(2000)
 
         withContext(Dispatchers.Main.immediate) {
             if (dataMock.isNotEmpty()) {
@@ -109,7 +109,7 @@ class ListBookViewModel(
             }.await()
         }
 
-        delay(3000)
+        delay(2000)
 
         withContext(Dispatchers.Main.immediate) {
             if (dataMock.isNotEmpty()) {
@@ -166,11 +166,6 @@ class ListBookViewModel(
         }
     }
 
-    private fun cancelAllJobLoadMore() {
-        allBooksLoadMoreJob.cancel()
-        wordBooksLoadMoreJob.cancel()
-        imageBooksLoadMoreJob.cancel()
-    }
 
     suspend fun updateProgress(numberUpdate: Int, currentProgress: Int): Int {
         return withContext(Dispatchers.Default) {
@@ -179,6 +174,12 @@ class ListBookViewModel(
                 numberUpdate + currentProgress
             }
         }.await()
+    }
+
+    private fun cancelAllJobLoadMore() {
+        allBooksLoadMoreJob.cancel()
+        wordBooksLoadMoreJob.cancel()
+        imageBooksLoadMoreJob.cancel()
     }
 
     companion object {
