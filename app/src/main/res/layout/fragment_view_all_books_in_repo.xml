@@ -1,4 +1,6 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -9,11 +11,11 @@
         android:layout_above="@id/progress_bar_load_more"
         android:clipToPadding="false"
         android:paddingHorizontal="16dp"
-        android:paddingVertical="12dp" />
+        android:paddingVertical="12dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/book_item_layout" />
 
-    <include layout="@layout/view_empty_stage" />
+    <include layout="@layout/shimmer_frame_book_layout" />
 
-    <include layout="@layout/progress_bar_load_data" />
-
-    <include layout="@layout/progress_bar_load_more" />
+    <include layout="@layout/empty_stage_layout" />
 </RelativeLayout>

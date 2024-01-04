@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="144dp"
+    android:layout_marginBottom="12dp"
+    android:background="@drawable/book_item_layout_background"
+    android:padding="8dp">
+
+    <View
+        android:id="@+id/box_image"
+        android:layout_width="80dp"
+        android:layout_height="match_parent"
+        android:background="@color/grey_300"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/book_type_box"
+        android:layout_width="50dp"
+        android:layout_height="18dp"
+        android:layout_marginStart="8dp"
+        android:background="@color/grey_300"
+        app:layout_constraintStart_toEndOf="@id/box_image"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/book_name_box"
+        android:layout_width="300dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="2dp"
+        android:background="@color/grey_300"
+        app:layout_constraintStart_toStartOf="@+id/book_type_box"
+        app:layout_constraintTop_toBottomOf="@id/book_type_box" />
+
+    <View
+        android:id="@+id/book_author_box"
+        android:layout_width="60dp"
+        android:layout_height="16dp"
+        android:layout_marginTop="2dp"
+        android:background="@color/grey_300"
+        app:layout_constraintStart_toStartOf="@+id/book_name_box"
+        app:layout_constraintTop_toBottomOf="@id/book_name_box" />
+
+    <View
+        android:id="@+id/book_view_box"
+        android:layout_width="52dp"
+        android:layout_height="16dp"
+        android:layout_marginTop="2dp"
+        android:background="@color/grey_300"
+        app:layout_constraintStart_toStartOf="@+id/book_author_box"
+        app:layout_constraintTop_toBottomOf="@id/book_author_box" />
+
+    <View
+        android:id="@+id/button_box"
+        android:layout_width="71dp"
+        android:layout_height="24dp"
+        android:background="@color/grey_300"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

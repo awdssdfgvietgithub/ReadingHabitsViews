@@ -127,6 +127,8 @@ class ListBookViewModel(
 
     fun loadMore(newBooks: List<BookModel>, bookType: Category? = null) = viewModelScope.launch {
         if (newBooks.isNotEmpty()) {
+            cancelAllJobLoadMore()
+
             when (bookType) {
                 WORD_BOOK -> {
                     wordBooksLoadMoreJob =
@@ -143,6 +145,16 @@ class ListBookViewModel(
                         updateState(booksData = _allBooksData, newBooks = newBooks)
                 }
             }
+        }
+    }
+
+    fun removeFirstItem() = viewModelScope.launch {
+        _allBooksData.value?.data?.let {
+            val currentList = it.toMutableList()
+            currentList.removeAt(0)
+            _allBooksData.value = _allBooksData.value?.copy(
+                data = currentList
+            )
         }
     }
 
