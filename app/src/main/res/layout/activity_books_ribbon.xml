@@ -36,14 +36,14 @@
     <!--        android:layout_weight="1" />-->
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_books"
+        android:id="@+id/rv_books_1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:listitem="@layout/item_book_test" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/btn_change"
+        android:id="@+id/btn_change_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="end|bottom"
